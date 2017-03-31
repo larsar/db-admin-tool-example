@@ -1,0 +1,1 @@
+INSERT INTO sec.repos (name) VALUES ('Example Repo');

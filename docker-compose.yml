@@ -1,0 +1,16 @@
+version: '2'
+services:
+  admin:
+    build: .
+    volumes:
+      - $HOME/.heroku:/root/.heroku
+      - $HOME/.netrc:/root/.netrc
+      - .:/usr/src/app
+    links:
+      - db
+  db:
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db:/db
